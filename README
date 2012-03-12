@@ -1,0 +1,24 @@
+
+# landing point
+#
+# from pythonTypeCheck import fun[, fn][, listTy][, dictTy][, printType]
+##
+## from pythonTypeCheck as tc
+## import imp
+## imp.reload(tc)
+#
+@fun
+def add(a, b) -> int:
+    return a + b
+
+@fun
+def map2(f, l:listTy(int)) -> listTy(str):
+    return [f(i) for i in l]
+
+@fun
+def ten(i:int) -> str:
+    return str(i // 10 * 10)
+
+@fun
+def map3(f: fn(int) >> str, l:listTy(int)) -> listTy(str):
+    return [f(i) for i in l]
